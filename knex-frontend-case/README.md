@@ -31,15 +31,14 @@ Cada participante deve implementar **seu próprio frontend** consumindo a API do
 ### Do usuário do sistema principal
 
 1. **Informações do usuário** — Fazer requisições na API e apresentar, de forma estética e coesa, as informações da Loja do usuário "logado":
-   - Nome dos produtos
-   - Foto dos produtos
-   - Preço
-   - Nome do cliente
-   - Foto do cliente
-   - Depoimento
-
-2. **Do Token** — Guardar em **Cookies** o token (ex.: SHA256) gerado pela requisição para persistência do usuário.
-   - A rota da página de gerenciamento da Loja deve ser **protegida**, sendo acessada somente com a presença do token.
+  - Nome dos produtos
+  - Foto dos produtos
+  - Preço
+  - Nome do cliente
+  - Foto do cliente
+  - Depoimento
+2. **Do Token** — Guardar em **Cookies** o token gerado pela requisição para persistência do usuário.
+  - A rota da página de gerenciamento da Loja deve ser **protegida**, sendo acessada somente com a presença do token.
 
 ### Requisitos gerais de validação
 
@@ -57,7 +56,9 @@ Cada participante deve implementar **seu próprio frontend** consumindo a API do
   1. **Visualização** — uma “landing” da loja (somente leitura), acessível apenas logado.
   2. **Gestão** — painel onde o usuário faz o CRUD de produtos (criar, listar, editar, excluir).
 
-A API a ser consumida está documentada em: **`knex-frontend-api-to-consume/README.md`** (rotas, payloads, autenticação).
+**API em produção:** [https://knex.zernis.space](https://knex.zernis.space) (health check: [https://knex.zernis.space/health](https://knex.zernis.space/health))
+
+A documentação completa da API (rotas, payloads, autenticação) está em `**knex-frontend-api-to-consume/README.md`**.
 
 ---
 
@@ -69,7 +70,6 @@ A API a ser consumida está documentada em: **`knex-frontend-api-to-consume/READ
   - Formulário: nome, email, senha.
   - Chamar `POST /auth/register`.
   - Após sucesso, redirecionar para login ou já logar automaticamente, como preferir.
-
 - **Login**
   - Formulário: email, senha.
   - Chamar `POST /auth/login`.
@@ -107,16 +107,18 @@ Fluxo de formulários (um modal, página separada, inline, etc.) e uso do campo 
 
 ## Resumo do que é esperado
 
-| Item | Obrigatório |
-|------|-------------|
-| Página de registro | Sim |
-| Página de login | Sim |
-| Área de visualização (leitura dos produtos, só logado) | Sim |
-| Gestor: listar produtos | Sim |
-| Gestor: criar produto | Sim |
-| Gestor: atualizar produto | Sim |
-| Gestor: excluir produto | Sim |
-| Consumir a API documentada em `knex-frontend-api-to-consume` | Sim |
+
+| Item                                                         | Obrigatório |
+| ------------------------------------------------------------ | ----------- |
+| Página de registro                                           | Sim         |
+| Página de login                                              | Sim         |
+| Área de visualização (leitura dos produtos, só logado)       | Sim         |
+| Gestor: listar produtos                                      | Sim         |
+| Gestor: criar produto                                        | Sim         |
+| Gestor: atualizar produto                                    | Sim         |
+| Gestor: excluir produto                                      | Sim         |
+| Consumir a API documentada em `knex-frontend-api-to-consume` | Sim         |
+
 
 **Livre:** tecnologia (React, Vue, Svelte, Angular, vanilla, etc.), design, estrutura de pastas, roteamento e estilo visual. O objetivo é cada um implementar o frontend consumindo a API da própria forma.
 

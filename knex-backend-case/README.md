@@ -8,11 +8,19 @@ Alguns usuários são **colaboradores** de uma empresa: além de comprar, eles p
 
 O sistema deve deixar claro **quem pode fazer o quê**: um colaborador da Apple não pode editar produtos da Samsung; qualquer pessoa logada pode ver todos os produtos e realizar compras.
 
----
-
 ## O problema que você vai resolver
 
 Você deve **desenhar e implementar uma API RESTful e stateless** que atenda a esse cenário: use os verbos e recursos HTTP de forma adequada e não dependa de sessão guardada no servidor — cada requisição deve trazer as informações necessárias para ser entendida e autorizada sozinha. A autenticação deve ser feita com **JWT**. É obrigatório que a solução inclua um **sistema de autorização e permissão**: a API deve saber quem está fazendo a requisição e permitir ou negar cada ação de acordo com as regras de negócio (por exemplo, impedir que um colaborador edite produtos de outra empresa). A entrega é a solução funcionando e documentada; a avaliação será **a forma como você resolveu** — clareza, organização do código, respeito às regras de negócio e decisões que você tomar.
+
+### Foco do case
+
+O candidato deve concentrar-se na resolução destes três tópicos:
+
+1. **Login e registro de usuários** — Cadastro de novos usuários e autenticação.
+2. **Autenticação e autorização** — Identificar quem está fazendo a requisição e garantir que cada ação seja permitida ou negada conforme as regras (ex.: colaborador só altera produtos da própria empresa).
+3. **CRUD de produtos e transações** — Criar, listar, editar e excluir produtos; registrar compras (transações) vinculando usuário e produto.
+
+O case permanece aberto para decisões de modelagem e implementação, mas a solução deve cobrir esses três pontos de forma funcional.
 
 ---
 
@@ -63,6 +71,17 @@ Sua API deve contemplar **no mínimo** as noções de domínio abaixo. Os nomes 
 - **Repositório:** Link do repositório (ex.: GitHub).
 - **README:** Como rodar o projeto (ambiente, dependências, comandos).
 - **API:** Documentação dos endpoints (Swagger, Postman, Insomnia ou outro formato que deixe claro como chamar cada rota).
+
+---
+
+## Aspectos valorizados na solução
+
+Na implementação, serão priorizados:
+
+- **POO** — Programação orientada a objetos
+- **SOLID** — Princípios de design de software
+- **DSA** — Estruturas de dados e algoritmos
+- **Containerização** — Aplicação containerizada
 
 ---
 

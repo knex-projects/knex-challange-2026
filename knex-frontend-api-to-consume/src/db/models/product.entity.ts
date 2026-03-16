@@ -4,6 +4,7 @@ import {
   DeleteDateColumn,
   Entity,
   JoinColumn,
+  ManyToOne,
   OneToOne,
   PrimaryGeneratedColumn,
   UpdateDateColumn,
@@ -37,7 +38,7 @@ class Product {
   @DeleteDateColumn()
   deleted_at: Date;
 
-  @OneToOne(() => Store)
+  @ManyToOne(() => Store)
   @JoinColumn({ name: "store_id" })
   store: Store;
 

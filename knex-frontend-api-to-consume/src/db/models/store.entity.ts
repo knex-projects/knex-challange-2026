@@ -4,11 +4,13 @@ import {
   DeleteDateColumn,
   Entity,
   JoinColumn,
+  OneToMany,
   OneToOne,
   PrimaryGeneratedColumn,
   UpdateDateColumn,
 } from "typeorm";
 import User from "./user.entity";
+import Product from "./product.entity";
 
 @Entity({ name: "stores" })
 class Store {
@@ -29,6 +31,9 @@ class Store {
 
   @DeleteDateColumn()
   deleted_at: Date;
+
+  @OneToMany(() => Product, (product) => product.store)
+  products: Product[];
 
   @OneToOne(() => User)
   @JoinColumn({ name: "user_id" })

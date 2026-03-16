@@ -5,7 +5,8 @@ import dataSource from "../../../db/database";
 import Product from "../../../db/models/product.entity";
 
 const updateProductByUser = async (request: Request, response: Response) => {
-  const { product_id, name, description, price, index } = request.body;
+  const product_id = Number(request.params.product_id);
+  const { name, description, price, index } = request.body;
   const token = String(request.headers.authorization);
   const jwtPayload = jwt.verify(token, jwtConfig.secret) as { user_id: number };
 

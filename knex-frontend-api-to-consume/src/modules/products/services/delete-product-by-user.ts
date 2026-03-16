@@ -5,7 +5,7 @@ import jwtConfig from "../../../config/jwt-config";
 import Product from "../../../db/models/product.entity";
 
 const deleteProductByUser = async (request: Request, response: Response) => {
-  const { product_id } = request.body;
+  const product_id = Number(request.params.product_id);
   const token = String(request.headers.authorization);
   const jwtPayload = jwt.verify(token, jwtConfig.secret) as { user_id: number };
   const foundProduct = await dataSource
